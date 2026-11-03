@@ -79,7 +79,7 @@ main() {
   chmod 644 "$deb"
 
   say "Installing"
-  $sudo "${apt[@]}" install -y "$deb"
+  $sudo "${apt[@]}" install -y --reinstall --allow-downgrades "$deb"
 
   local ver
   ver="$(dpkg-query -W -f='${Version}' "$PKG" 2>/dev/null || true)"

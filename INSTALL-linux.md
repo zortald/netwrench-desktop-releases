@@ -20,18 +20,18 @@ NetWrench uses **WebKitGTK 4.1**, so it needs a reasonably current distribution:
   WebKitGTK 4.0, which Tauri 2 cannot use. Upgrade the OS to run NetWrench.
 
 
-## Quick install (detects your architecture)
+## Install — one command
 
 ```bash
-arch=$(dpkg --print-architecture)   # amd64 or arm64
-curl -L -o netwrench.deb \
-  "https://github.com/zortald/netwrench-desktop-releases/releases/latest/download/NetWrench-linux-${arch}.deb"
-sudo apt install -y ./netwrench.deb
+curl -fsSL https://raw.githubusercontent.com/zortald/netwrench-desktop-releases/main/install.sh | bash
 ```
 
-`apt` pulls the dependencies (`libwebkit2gtk-4.1-0`, `libgtk-3-0`) itself.
+It detects the architecture, checks that the system is supported, waits for
+automatic updates to release the package manager, downloads the latest release
+and installs it with `apt` (dependencies included). It asks for your password
+once, for `sudo`.
 
-## Manual download
+## Manual download (without the script)
 
 Always-latest links:
 
@@ -55,20 +55,15 @@ netwrench-desktop
 
 ## Update
 
-Download and install the latest `.deb` the same way — `apt` replaces it in place:
-
-```bash
-arch=$(dpkg --print-architecture)
-curl -L -o netwrench.deb \
-  "https://github.com/zortald/netwrench-desktop-releases/releases/latest/download/NetWrench-linux-${arch}.deb"
-sudo apt install -y ./netwrench.deb
-```
+Run the same command again — it always installs the latest release.
 
 ## Remove
 
 ```bash
-sudo apt remove net-wrench
+curl -fsSL https://raw.githubusercontent.com/zortald/netwrench-desktop-releases/main/install.sh | bash -s -- --uninstall
 ```
+
+or simply `sudo apt remove net-wrench`.
 
 ## Notes
 

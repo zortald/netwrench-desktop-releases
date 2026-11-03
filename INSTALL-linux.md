@@ -74,9 +74,9 @@ sudo apt remove net-wrench
 
 - **Dependencies** are in the distro repositories and resolved automatically by
   `apt install ./<file>.deb`. If you use `dpkg -i`, run `sudo apt -f install` after.
-- **Wi-Fi survey** is not yet available on Linux (no nl80211 backend); every other
-  tool — speed test, iPerf3, LAN discovery, adapters, DHCP, router detection and
-  login — works.
+- **Wi-Fi survey** on Linux is **experimental** (a new nl80211 backend, still being
+  verified on hardware). If the Wi-Fi tab shows nothing, the other tools — speed
+  test, iPerf3, LAN discovery, adapters, DHCP, router detection and login — all work.
 - **Other distributions:** only `.deb` is published today. A native package or
   AppImage for Fedora/openSUSE/Arch is not yet provided.
 - **Verifying a download:** each release lists SHA-256 sums in its notes; check

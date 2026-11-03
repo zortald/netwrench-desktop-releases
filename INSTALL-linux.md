@@ -10,6 +10,16 @@ NetWrench ships as a `.deb` package for Debian / Ubuntu and derivatives
 
 The links below always point at the **latest release** — no version to pick.
 
+## Requirements
+
+NetWrench uses **WebKitGTK 4.1**, so it needs a reasonably current distribution:
+
+- **Ubuntu 22.04 LTS or newer**, **Linux Mint 21+**, **Debian 12+**, or equivalent
+  (glibc ≥ 2.34, `libwebkit2gtk-4.1-0` available).
+- **Ubuntu 20.04 / Mint 20 and older are not supported** — they ship only
+  WebKitGTK 4.0, which Tauri 2 cannot use. Upgrade the OS to run NetWrench.
+
+
 ## Quick install (detects your architecture)
 
 ```bash
